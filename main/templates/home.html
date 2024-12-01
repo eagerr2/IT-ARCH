@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atlas Technology</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Your custom styles -->
+    <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a class="navbar-brand" href="#">Atlas Technology</a>
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="static/css/images/Atlas.png" alt="Logo" style="width: 40px; height: 40px; margin-right: 10px;">
+                Atlas Technology
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+            </button> 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link" href="#">Home Appliances</a></li>
@@ -25,25 +27,19 @@
                     <li class="nav-item"><a class="nav-link" href="#">Accessories</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Brands</a></li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search">
-                    <button class="btn btn-light" type="submit">Search</button>
+                <form class="d-flex me-3">
+                    <input class="form-control" type="search" placeholder="Search">
+                    <button class="btn btn-light ms-2" type="submit">Search</button>
                 </form>
-
-                <form class="d-flex">
-                    <button class="btn btn-light" type="submit">Login</button>
-                </form>
-
-                <form class="d-flex">
-                    <button class="btn btn-light" type="submit">Sign-Up</button>
-                </form>
+                <div class="d-flex">
+                    <a href="/login" class="btn btn-light me-2">Login</a>
+                    <a href="/signup" class="btn btn-light">Sign Up</a>
+                </div>
             </div>
         </div>
     </nav>
-
     <div class="container mt-4">
         <div class="row">
-            <!-- Sidebar Filters -->
             <div class="col-md-3">
                 <h5>Filters</h5>
                 <input type="text" class="form-control mb-3" placeholder="Keywords">
@@ -57,10 +53,8 @@
                     <div><input type="checkbox" id="color2"> Lorem Ipsum</div>
                 </div>
             </div>
-
-            <!-- Product Grid -->
             <div class="col-md-6">
-                <div class="row g-3"> <!-- Bootstrap gap class -->
+                <div class="row g-3">
                     <div class="col-md-4">
                         <div class="card p-3">
                             <img src="placeholder.jpg" class="card-img-top" alt="Product">
@@ -73,13 +67,9 @@
                     </div>
                 </div>
             </div>
-
-
-            <!-- Cart -->
             <div class="col-md-3 mb-3 p-3 bg-white border rounded">
                 <h5>Cart</h5>
                 <div id="cart-items">
-                    <!-- Dynamic cart items here -->
                 </div>
                 <hr>
                 <p>Subtotal: $<span id="subtotal">0</span></p>
@@ -87,20 +77,7 @@
             </div>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
-<!-- <div class="product-grid">
-    {% for product in products %}
-        <div class="product-card">
-            <img src="{{ product.image.url }}" alt="{{ product.name }}">
-            <h3>{{ product.name }}</h3>
-            <p>${{ product.price }}</p>
-        </div>
-    {% endfor %}
-</div> -->

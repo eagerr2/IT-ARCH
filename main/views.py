@@ -6,10 +6,10 @@ def home_view(request):
     return render(request, 'home.html', {'products': products})
 
 def login_view(request):
-    pass
+    return render(request, 'login.html')
 
 def signup_view(request):
-    pass
+    return render(request, 'signup.html')
 
 def checkout_view(request):
-    pass
+    return render(request, 'checkout.html')
