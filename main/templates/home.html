@@ -4,39 +4,48 @@
 
 {% block content %}
 <div class="row">
+    <!-- Filters Column -->
     <div class="col-md-3">
         <h5>Filters</h5>
         <input type="text" class="form-control mb-3" placeholder="Keywords">
         <div>
             <h6>Color</h6>
-            <div><input type="checkbox" id="color1"> Black</div>
-            <div><input type="checkbox" id="color2"> Red</div>
-            <div><input type="checkbox" id="color1"> Yellow</div>
-            <div><input type="checkbox" id="color2"> Orange</div>
+            <div><input type="checkbox" id="color_black"> Black</div>
+            <div><input type="checkbox" id="color_red"> Red</div>
+            <div><input type="checkbox" id="color_yellow"> Yellow</div>
+            <div><input type="checkbox" id="color_orange"> Orange</div>
             <h6>Price</h6>
-            <div><input type="checkbox" id="size1"> example for now</div>
+            <div><input type="checkbox" id="price_example"> example for now</div>
         </div>
     </div>
+
+    <!-- Products Grid -->
     <div class="col-md-6">
         <div class="row g-3">
+            {% for product in products %}
             <div class="col-md-4">
                 <div class="card p-3">
-                    <img src="placeholder.jpg" class="card-img-top" alt="Product">
-                    <div class="card-body">
-                        <h5 class="card-title">Lorem Ipsum</h5>
-                        <p class="card-text">$400</p>
-                        <button class="btn btn-primary">Add to Cart</button>
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text">€{{ product.price }}</p>
+                        <button class="btn btn-primary w-100">Add to Cart</button>
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
+
+    <!-- Cart Column -->
     <div class="col-md-3 mb-3 p-3 bg-white border rounded">
         <h5>Cart</h5>
         <div id="cart-items"></div>
         <hr>
         <p>Subtotal: $<span id="subtotal">0</span></p>
-        <a href={% url "checkout"%}><button class="btn btn-success">Proceed to Checkout</button></a>
+        <a href="{% url 'checkout' %}">
+            <button class="btn btn-success w-100">Proceed to Checkout</button>
+        </a>
     </div>
 </div>
 {% endblock %}
