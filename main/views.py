@@ -14,9 +14,12 @@ def signup_view(request):
 def checkout_view(request):
     return render(request, 'checkout.html')
 
-def shop_view(request, detail):
+def shop_view(request, categorystr):
+    productsbycategory = Product.objects.filter(category=categorystr)
+
 
     ctx = {
-        'detail' : detail,
+        'detail' : categorystr,
+        'productsbycategory' : productsbycategory,
     }
-    return render(request, 'shop.html', context=ctx)
+    return render(request, 'shopbycategory.html', context=ctx)

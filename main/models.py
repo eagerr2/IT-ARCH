@@ -8,7 +8,14 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     image = models.ImageField(upload_to='products/')
     description = models.TextField()
-    category = models.CharField(max_length=50)
+    CATEGORY_CHOICES = [('Home Appliances', 'Home Appliances'), 
+                        ('TV & Audio', 'TV & Audio'), 
+                        ('Small Appliances', 'Small Appliances'), 
+                        ('Computing & Gaming', 'Computing & Gaming'), 
+                        ('Smart devices', 'Smart devices'), 
+                         ]
+
+    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
 
     def __str__(self):
         return '{:s}: €{:d}'.format(self.name, self.price)

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ detail }} | Atlas Technology{% endblock %}
+
+{% block content %}
+<div class="product-grid">
+    {% for product in productsbycategory %}
+        <div class="product-card">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            <h3>{{ product.name }}</h3>
+            <p>${{ product.price }}</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

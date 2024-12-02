@@ -22,11 +22,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Home Appliances</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">TV & Audio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Small Appliances</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Computing & Gaming</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Smart devices</a></li>
+                    <li class="nav-item"><a class="nav-link" href={% url 'shopbycategory' 'Home Appliances' %}>Home Appliances</a></li>
+                    <li class="nav-item"><a class="nav-link" href={% url 'shopbycategory' 'TV & Audio' %}>TV & Audio</a></li>
+                    <li class="nav-item"><a class="nav-link" href={% url 'shopbycategory' 'Small Appliances' %}>Small Appliances</a></li>
+                    <li class="nav-item"><a class="nav-link" href={% url 'shopbycategory' 'Computing & Gaming' %}>Computing & Gaming</a></li>
+                    <li class="nav-item"><a class="nav-link" href={% url 'shopbycategory' 'Smart devices' %}>Smart devices</a></li>
                 </ul>
                 <form class="d-flex me-3">
                     <input class="form-control" type="search" placeholder="Search">
