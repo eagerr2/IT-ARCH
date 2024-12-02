@@ -3,7 +3,7 @@
 {% block title %}Home | Atlas Technology{% endblock %}
 
 {% block content %}
-<div class="row">
+<div class="row align-items-start">
     <!-- Filters Column -->
     <div class="col-md-3">
         <h5>Filters</h5>
@@ -40,9 +40,13 @@
     <!-- Cart Column -->
     <div class="col-md-3 mb-3 p-3 bg-white border rounded">
         <h5>Cart</h5>
-        <div id="cart-items"></div>
+        <div id="cart-items">
+            <!-- Add dynamic cart items here -->
+            <p>Item 1: $50</p>
+            <p>Item 2: $30</p>
+        </div>
         <hr>
-        <p>Subtotal: $<span id="subtotal">0</span></p>
+        <p>Subtotal: $<span id="subtotal">80</span></p>
         <a href="{% url 'checkout' %}">
             <button class="btn btn-success w-100">Proceed to Checkout</button>
         </a>
