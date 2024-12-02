@@ -4,7 +4,6 @@
 
 {% block content %}
 <div class="row align-items-start">
-    <!-- Filters Column -->
     <div class="col-md-3">
         <h5>Filters</h5>
         <input type="text" class="form-control mb-3" placeholder="Keywords">
@@ -19,7 +18,6 @@
         </div>
     </div>
 
-    <!-- Products Grid -->
     <div class="col-md-6">
         <div class="row g-3">
             {% for product in products %}
@@ -37,11 +35,9 @@
         </div>
     </div>
 
-    <!-- Cart Column -->
     <div class="col-md-3 mb-3 p-3 bg-white border rounded">
         <h5>Cart</h5>
         <div id="cart-items">
-            <!-- Add dynamic cart items here -->
             <p>Item 1: $50</p>
             <p>Item 2: $30</p>
         </div>
