@@ -1,3 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Sign Up | Atlas Technology{% endblock %}
+
+{% block content %}
 <div class="product-grid">
     {% for product in products %}
         <div class="product-card">
@@ -7,3 +13,4 @@
         </div>
     {% endfor %}
 </div>
+{% endblock %}

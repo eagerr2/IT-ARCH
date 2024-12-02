@@ -9,11 +9,12 @@
         <input type="text" class="form-control mb-3" placeholder="Keywords">
         <div>
             <h6>Color</h6>
-            <div><input type="checkbox" id="color1"> Lorem Ipsum</div>
-            <div><input type="checkbox" id="color2"> Lorem Ipsum</div>
-            <h6>Size</h6>
-            <div><input type="checkbox" id="size1"> Lorem Ipsum</div>
-            <div><input type="checkbox" id="size2"> Lorem Ipsum</div>
+            <div><input type="checkbox" id="color1"> Black</div>
+            <div><input type="checkbox" id="color2"> Red</div>
+            <div><input type="checkbox" id="color1"> Yellow</div>
+            <div><input type="checkbox" id="color2"> Orange</div>
+            <h6>Price</h6>
+            <div><input type="checkbox" id="size1"> example for now</div>
         </div>
     </div>
     <div class="col-md-6">
@@ -35,7 +36,7 @@
         <div id="cart-items"></div>
         <hr>
         <p>Subtotal: $<span id="subtotal">0</span></p>
-        <button class="btn btn-success">Proceed to Checkout</button>
+        <a href={% url "checkout"%}><button class="btn btn-success">Proceed to Checkout</button></a>
     </div>
 </div>
 {% endblock %}
