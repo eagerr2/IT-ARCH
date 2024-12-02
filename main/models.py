@@ -11,7 +11,7 @@ class Product(models.Model):
     category = models.CharField(max_length=50)
 
     def __str__(self):
-        return '{:s} {:d}'.format(self.name, self.price)
+        return '{:s}: €{:d}'.format(self.name, self.price)
     
 #for the shopping cart
 class CartItem(models.Model):
@@ -20,7 +20,7 @@ class CartItem(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return '{:s} {:d}'.format(self.product, self.quantity)
+        return '{:s}: {:d}'.format(self.product, self.quantity)
 
 #for the checkout process
 class Order(models.Model):
@@ -31,4 +31,4 @@ class Order(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return '{:d}'.format(self.total_cost)
+        return '€{:d}'.format(self.total_cost)
