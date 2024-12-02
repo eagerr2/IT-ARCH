@@ -123,5 +123,15 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+# AWS_ACCESS_KEY_ID = 'AKIA4ZPZVQ6HFMWAKE66'  # Your Access Key ID
+# AWS_SECRET_ACCESS_KEY = 'VZjUSpWedQGKM0DpmtUEZy2i4jjnhSIKXCvN6E6'  # Your Secret Access Key
+# AWS_STORAGE_BUCKET_NAME = 'itarchbucket'
+# AWS_S3_REGION_NAME = 'us-east-1'  # Replace with your S3 bucket's region
+# AWS_QUERYSTRING_AUTH = False  # Disable query strings for public access
+
+# # S3 Integration for Django
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATIC_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/static/'
+# MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
