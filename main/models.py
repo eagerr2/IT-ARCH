@@ -27,7 +27,7 @@ class CartItem(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return '{:s}: {:d}'.format(self.product, self.quantity)
+        return f'{self.product}: {self.quantity}'
 
 #for the checkout process
 class Order(models.Model):
@@ -38,4 +38,4 @@ class Order(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return '€{:d}'.format(self.total_cost)
+        return f'€{self.total_cost}'

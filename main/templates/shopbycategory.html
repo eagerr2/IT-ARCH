@@ -4,6 +4,8 @@
 {% block title %}{{ detail }} | Atlas Technology{% endblock %}
 
 {% block content %}
+
+{% if productsbycategory %}
 <div class="product-grid">
     {% for product in productsbycategory %}
         <div class="product-card">
@@ -12,5 +14,9 @@
             <p>€{{ product.price }}</p>
         </div>
     {% endfor %}
+{% else %}
+    <h4>There are no products in this category.</h4>
+{% endif %}
+
 </div>
 {% endblock %}
