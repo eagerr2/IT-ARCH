@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 #for the home page
@@ -39,3 +40,9 @@ class Order(models.Model):
 
     def __str__(self):
         return '€{:d}'.format(self.total_cost)
+    
+class PaymentDetail(models.Model):
+    card_name = models.CharField(max_length=100)
+    card_number = models.PositiveBigIntegerField(validators=[MaxValueValidator(9999999999999999), MinValueValidator(1000000000000000)])
+    expiry_date = models.DateField()
+    cvv = models.IntegerField(validators=[MaxValueValidator(9999), MinValueValidator(1000)])
